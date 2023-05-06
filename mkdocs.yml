@@ -17,13 +17,12 @@ theme:
   favicon: images/icon.png
   features:
     - navigation.tabs
-    - navigation.sections
+    - navigation.expand
     - navigation.tracking
     - navigation.instant
     - navigation.top
     - navigation.footer
-    - navigation.sections
-    - navigation.expand
+    - navigation.prune
     - navigation.path
     - toc.integrate
     - toc.follow
