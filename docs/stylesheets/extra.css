@@ -3,11 +3,6 @@ body
     display: flex;
 }
 
-img
-{
-    width: 120;
-    height: 145;
-}
 
 #container{
     display: inline-block;
