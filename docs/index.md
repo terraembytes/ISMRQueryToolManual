@@ -67,31 +67,31 @@ After logging in as an authorized researcher, collaborator or staff member, the 
 
 <div id = "container">
     <div class = "imagem" id = "iae">
-        <img src="images/sponsors/iae.png" width="120">
+        <img src="images/sponsors/iae.PNG" width="120">
     </div>
     <div class = "imagem" id = "unesp">
-        <img src="images/sponsors/UNESP.png" width="120">
+        <img src="images/sponsors/UNESP.PNG" width="120">
     </div>
     <div class = "imagem" id = "ifpresep">
-        <img src="images/sponsors/ifpresep.png" width="120">
+        <img src="images/sponsors/ifpresep.PNG" width="120">
     </div>
     <div class = "imagem" id = "inpe">
-        <img src="images/sponsors/inpe.png" width="120">
+        <img src="images/sponsors/inpe.PNG" width="120">
     </div>
     <div class = "imagem" id = "ita">
-        <img src="images/sponsors/ITA.png" width="120">
+        <img src="images/sponsors/ITA.PNG" width="120">
     </div>
     <div class = "imagem" id = "puc_rio">
-        <img src="images/sponsors/puc_rio.png" width="120">
+        <img src="images/sponsors/puc_rio.PNG" width="120">
     </div>
     <div class = "imagem" id = "ufpr">
-        <img src="images/sponsors/ufpr.png" width="120">
+        <img src="images/sponsors/ufpr.PNG" width="120">
     </div>
     <div class = "imagem" id = "ufrgs">
-        <img src="images/sponsors/ufrgs.png" width="120">
+        <img src="images/sponsors/ufrgs.PNG" width="120">
     </div>
     <div class = "imagem" id = "utfpr">
-        <img src="images/sponsors/UTFPR.png" width="120">
+        <img src="images/sponsors/UTFPR.PNG" width="120">
     </div>
 </div>
 
