@@ -18,7 +18,7 @@
 
 *Login Screen*
 
-<img src="/images/ex/functions.PNG" width="500">
+<img src="images/ex/functions.PNG" width="500">
 
 *Functions Avaliable*
 
