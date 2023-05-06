@@ -1,0 +1,90 @@
+site_name: ISMR Query Tool Manual
+nav:
+  - Home: index.md
+  - Getting Started: gS.md
+  - Plot: plot.md
+  - Grid: grid.md
+  - IPP Map: ippmap.md
+  - Horizon Charts: hC.md
+  - SAX: sax.md
+  - Calendar View: cView.md
+  - Correlation Analysis: cA.md
+  - Sky Plot: skyplot.md
+theme:
+  custom_dir: overrides
+  name: material
+  logo: images/logo.png
+  favicon: images/icon.png
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.tracking
+    - navigation.instant
+    - navigation.top
+    - navigation.footer
+    - navigation.sections
+    - navigation.expand
+    - navigation.path
+    - toc.integrate
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+  language: en
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline 
+        name: Switch to dark mode
+      primary: light blue
+      accent: lime 
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate 
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode    
+      primary: light blue
+      accent: lime
+
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/solid/paper-plane
+      link: mailto:brunovani22@gmail.com
+      name: Fazer uma sugestão/report
+   ## - icon: https://fontawesome.com/icons/landmark?f=classic&s=solid
+   ##   link: 
+    - icon: fontawesome/brands/instagram
+      link: https://www.instagram.com/gege.unesp/
+
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - admonition
+  - pymdownx.arithmatex:
+      generic: true
+  - footnotes
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.mark
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+extra_css:
+  - stylesheets/extra.css
+
+      
+      
+copyright: | 
+  &copy; 2023 <a>Bruno Cesar Vani</a>
+  
+  
+
