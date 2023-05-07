@@ -8,7 +8,7 @@
 
  **1.** To access the Tool a request to sign up is needed, identifying yourself and justifying the need for access.
 
-<img src ="/images/ex/localsignup.PNG" width="150">
+<img src ="/images/localsignup.PNG" width="150">
 
 
 *Sign up option*
@@ -16,13 +16,13 @@
  **2.** After the registration is validated, simply log in and the access to the functions will be released.
 
 
-<img src="/images/ex/login.PNG" width="500">
+<img src="/images/login.PNG" width="500">
 
 
 *Login Screen*
  
 
-<img src="/images/ex/functions.png" width="500">
+<img src="/images/functions.png" width="500">
 
 
 *Functions Avaliable*
