@@ -2,8 +2,9 @@
 
 * * *
 
-This function makes it possible to analyze time series of monitoring attributes, with the time attribute being represented along the x-axis.
-
+This function makes it possible to analyze time series of monitoring attributes, allowing the user to identify duration and peaks
+of scintillation, as well as visually identify the most affected satellites with the time attribute being represented along the x-axis.
+ 
 * * *
 
 After entering the initial parameters, the user can set some specific filters for plotting.
