@@ -7,7 +7,7 @@ nav:
   - IPP Map: ippmap.md
   - Horizon Charts: hC.md
   - SAX: sax.md
-  - Calendar View: cView.md
+  - Calendars: cView.md
   - Correlation Analysis: cA.md
   - Sky Plot: skyplot.md
 theme:
@@ -33,13 +33,6 @@ theme:
     - content.code.copy
   language: en
   palette:
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      toggle:
-        icon: material/toggle-switch-off-outline 
-        name: Switch to dark mode
-      primary: light blue
-      accent: lime 
     - media: "(prefers-color-scheme: dark)"
       scheme: slate 
       toggle:
@@ -47,6 +40,14 @@ theme:
         name: Switch to light mode    
       primary: light blue
       accent: lime
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline 
+        name: Switch to dark mode
+      primary: light blue
+      accent: lime 
+    
 
 extra:
   generator: false

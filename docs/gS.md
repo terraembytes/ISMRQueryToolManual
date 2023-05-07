@@ -57,7 +57,7 @@ date_end | End date/time of the dataset. Format **YYYY-MM-DD hh : mm :ss** | 201
 
 ## **Some initial parameters**
 
-*Some of the functions will have as start parameters:*
+*Some of the functions will have as start Filters:*
 
 1. **Date/time interval(UTC):** Time interval of the dataset.
 
