@@ -1,3 +1,5 @@
+
+
 # Getting Started
 
 * * *
@@ -16,13 +18,13 @@
  **2.** After the registration is validated, simply log in and the access to the functions will be released.
 
 
-<img src="/images/gs/login.PNG" width="500">
+<img src="./images/gs/login.PNG" width="500">
 
 
 *Login Screen*
  
 
-<img src="/images/gs/functions.png" width="500">
+<img src="./images/gs/functions.png" width="500">
 
 
 *Functions Avaliable*
