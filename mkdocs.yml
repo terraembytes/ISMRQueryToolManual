@@ -10,6 +10,7 @@ nav:
   - Calendars: cView.md
   - Correlation Analysis: cA.md
   - Sky Plot: skyplot.md
+  - API: api.md
 theme:
   custom_dir: overrides
   name: material
