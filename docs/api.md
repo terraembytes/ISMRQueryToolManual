@@ -1,16 +1,5 @@
 # Specifications
 
-## Introduction
-
-The webservice is designed to exchange data between researchers and project partners. It works with HTTP GET requests, therefore allowing interoperability with any programming language (like Matlab, R, C, Java, Javascript, etc) or utility (wget, curl, etc).
-
-The access to webservice capabilities is exclusive for authorized researchers,
-collaborators and staff members.  
-
-*Please, do not use this service to feed third part applications.*
-*Authentication tools are under development, please, do not share this service without authorization from UNESP.*
-
-
 ## How to use this specification
 
 * Parameters presented in plain text, the most of them, are mandatory. 
@@ -21,14 +10,14 @@ collaborators and staff members.
 ## ISMR data request
 Base URL: <http://is-cigala-calibra.fct.unesp.br/is/ismrtool/calc-var/service_loadISMR.php>
 
-Use this webservice to download the data from the ISMR data table. 
+Use this tool to download the data from the ISMR data table. 
 This service demands one HTTP request by **station**. It returns all ISMR data tracked at the given time window.
 
 
 Parameter          | Description   |  Example(s) |
 :-----------       |:------------- | :-----------|
-date_begin         | Start date/time of the dataset. Format **YYYY-MM-DD hh:mm:ss**  |2014-10-01 22:00:00  |
-date_end           | End date/time of the dataset. Format **YYYY-MM-DD hh:mm:ss**    | 2014-10-01 22:05:00  | 
+date_begin         | Start date/time of the dataset. Format **YYYY-MM-DD hh : mm : ss**  |2014-10-01 22:00:00  |
+date_end           | End date/time of the dataset. Format **YYYY-MM-DD hh : mm : ss**    | 2014-10-01 22:05:00  | 
 (station)            | Single numeric **station id** to be retrieved. Use only if *stationName* is omitted.  | 5 <br> 8  |
 (stationName)        | String **station name (XXXX)** to be retrieved. Use only if *station* is omitted.     | PRU1 <br> SJCU |
 mode               | Output mode. | csv <br> json |
@@ -48,20 +37,27 @@ b) Similar request based on station id and json output:
 ## High-rate (50 Hz) data
 Base URL: <http://is-cigala-calibra.fct.unesp.br/is/ismrtool/calc-var/service_loadHighRate.php> 
 
-Use this webservice to download high-rate data (50 Hz) as text files.
-Due to the large amount of data and huge processing/storage required to convert the binary files (.sbf) to text files at 50 Hz, this service demands a single HTTP call for each PRN and for each monitoring hourly file from a given station[¹]. 
+Use this tool to download high-rate data (50 Hz) as text files.
+Due to the large amount of data and huge processing/storage required to convert the binary files (.sbf) to text files at 50 Hz, this service demands a single HTTP call for each PRN and for each monitoring hourly file from a given station. 
 
 
 Parameter          | Description   |  Example(s) |
 :-----------       |:------------- | :-----------|
-timestamp         | A single timestamp (date/time) inside the date-time range of the file. Format **YYYY-MM-DD hh:mm:ss**  | 2014-10-01 22:01:00  |
+timestamp         | A single timestamp (date/time) inside the date-time range of the file. Format **YYYY-MM-DD hh : mm : ss**  | 2014-10-01 22:01:00  |
 (station)            | Single numeric **station id** to be retrieved. Use only if *stationName* is omitted.  | 5 <br> 8  |
 (stationName)        | String **station name (XXXX)** to be retrieved. Use only if *station* is omitted.     | PRU1 <br> SJCU |
 data_type          | Integer value for the signal type according to Septentrio's convention (see Table 1). | 0 <br> 3 |
 sat                | SVID of the satellite according to Septentrio's convention (see Table 2).             | 2 <br> 25|
 mode               | Output mode. | csv |
 
-[¹] The most of the stations works with hourly files. Few stations works with 15-minutes files, for such stations this webservice is not supported yet. Users can look for the ISMR data in advance to check the satellites present in the dataset at a given time range.
+*Example of high-rate data (50 Hz)*
+
+![Data50Hz](images/api/data50.PNG)
+
+
+
+
+The most of the stations works with hourly files. Few stations works with 15-minutes files, for such stations this webservice is not supported yet. Users can look for the ISMR data in advance to check the satellites present in the dataset at a given time range.
 
 The **timestamp** parameter will identify the corresponding raw file to make the 50 Hz conversion. Please, see the remarks below regarding the time ranges for the hourly bases files:
 
@@ -136,8 +132,8 @@ d) Similar request for one-hour of L1CA high-rate data, satellite SVID 136 (SBAS
 
 Parameter          | Description   |  Example(s) |
 :-----------       |:------------- | :-----------
-date_begin         | Start date/time of the dataset. Format **YYYY-MM-DD hh:mm:ss**  |2014-10-01 22:00:00  |
-date_end           | End date/time of the dataset. Format **YYYY-MM-DD hh:mm:ss**    | 2014-10-01 22:05:00  | 
+date_begin         | Start date/time of the dataset. Format **YYYY-MM-DD hh : mm : ss**  |2014-10-01 22:00:00  |
+date_end           | End date/time of the dataset. Format **YYYY-MM-DD hh : mm : ss**    | 2014-10-01 22:05:00  | 
 [satellite]          | Comma separated list of GNSS systems (case insensitive) to be included. If omitted, defaults to all satellites tracked by receivers. |  gps <br> GPS,GLONASS <br> GPS,GLONASS,GALILEO,SBAS,BEIDOU,QZSS |  
 (station)            | Comma separated list of **station ids** to be included. Use only if *stationName* is omitted.  | 5 <br> 5,6,8  |
 (stationName)        | Comma separated list of **station names** to be included. Use only if *station* is omitted.     | PRU1 <br> PRU1,PRU2,SJCU |

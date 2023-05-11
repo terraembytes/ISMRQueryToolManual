@@ -2,6 +2,7 @@ site_name: ISMR Query Tool Manual
 nav:
   - Home: index.md
   - Getting Started: gS.md
+  - Attributes: atributos.md
   - Plot: plot.md
   - Grid: grid.md
   - IPP Map: ippmap.md
