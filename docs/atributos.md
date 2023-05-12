@@ -809,3 +809,28 @@ f2nd_tec_locktime
     ```markdown
     t_l5
     ```
+
+* * *
+
+## **Coordinated Universal Time**
+LISN receivers use the UTC time system, so there is a difference of a few seconds between records due to the time difference between the GPS and UTC time system.
+
+*LISN receivers data are avaliable as*
+
+```
+time_utc_1
+time_utc_2
+time_utc_3
+time_utc_4
+time_utc_5
+time_utc_p1
+time_utc_p2
+time_utc_p3
+time_utc_p4
+time_utc_p5
+
+```
+
+
+
+

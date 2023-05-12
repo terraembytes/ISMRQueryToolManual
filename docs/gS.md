@@ -18,7 +18,7 @@
  **2.** After the registration is validated, simply log in and the access to the functions will be released.
 
 
-![Login](images/login.PNG)
+![Login](images/login.png)
   
 
 *Login Screen*
