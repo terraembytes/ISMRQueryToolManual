@@ -18,7 +18,8 @@ theme:
   logo: images/logo.png
   favicon: images/icon.png
   features:
-    - navigation.tabs
+    - navigation.tabs 
+    - navigation.sections
     - navigation.tracking
     - navigation.instant
     - navigation.top

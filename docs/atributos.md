@@ -267,7 +267,6 @@ f2nd_tec_cn0
 
 ## **Phi on signal**
 
-
 ### Phi01
 
 - 1 second phase sigma (radians)
