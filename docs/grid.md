@@ -8,7 +8,7 @@ hide:
 
 * * *
 
-Here you can generate a list of scintillation values according to the defined fields and the desired time interval.
+Here you can generate a list of scintillation values according to the selected fields and the desired time interval.
 
 * * *
 

@@ -47,7 +47,7 @@ theme:
         icon: material/toggle-switch-off-outline 
         name: Switch to dark mode
       primary: light blue
-      accent: lime 
+      accent: yellow
     
 
 extra:
