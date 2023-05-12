@@ -2,12 +2,37 @@
 
 *Source: sbf2ismr v22.1.0*
 
+## Signal groups
+
+Sig1:
+
+- **L1CA** for GPS/GLONASS/SBAS/QZSS 
+- **L1BC** for GALILEO 
+- **B1** for BeiDou 
+
+Sig2:
+
+- **L2C** for GPS/GLONASS/QZSS 
+- **L5** for SBAS 
+- **E5a** for*GALILEO 
+- **B2** for BeiDou 
+
+Sig3:
+
+- **L5** for GPS/QZSS 
+- **E5b** for GALILEO 
+
+
 * * *
 ## **GPS Week Number**
 
 *available as:*
 
-> wn
+
+```
+wn
+
+```
 
 * * *
 
@@ -15,7 +40,12 @@
 
 *available as:*
 
->tow
+
+```
+
+tow
+
+```
 
 * * *
 
@@ -23,15 +53,20 @@
 
 *available as:*
 
->svid 
+
+```
+
+svid
+
+```
  
-    1-37: Pseudorandom noise (PRN) number for GPS satellites
+>1-37: [PRN]("Pseudorandom noise") number for GPS satellites
 
-    38-61: Slot number for GLONASS satellites (with an offset of 37)
+>38-61: Slot number for GLONASS satellites (with an offset of 37)
 
-    71-106: PRN number for GALILEO satellites (with an offset of 70)
+>71-106: PRN number for GALILEO satellites (with an offset of 70)
 
-    120-138: PRN number for SBAS satellites
+>120-138: PRN number for SBAS satellites
 
 * * *
 
@@ -39,7 +74,12 @@
 
 *avliable as:*
 
->sbf_block
+
+```
+
+sbf_block
+
+```
 
 * * *
 
@@ -49,7 +89,11 @@ positive to the East.
 
 *avaliable as:*
 
->azim
+```
+
+azim
+
+```
 
 * * *
 
@@ -58,39 +102,43 @@ It defines the angle between the local horizontal plane and the direction to the
 
 *avaliable as:*
 
->elev
+```
+
+elev
+
+```
 
 * * *
 
 ## **Average signal C/N0 over the last minute (dB-Hz)**
+
+
 Carrier-to-Noise Ratio
 
 *avaliable at:*
 
-- GPS/GLONASS/SBAS/QZSS **(L1CA)**
-- GALILEO **(L1BC)**
-- BeiDou **(B1)**
+=== "Sig1"
 
-*as*
->avg_cn0_l1
+    *as*
+    ```markdown
+    avg_cn0_l1
+    ```
 
-*avaliable at:*
+=== "Sig2"
 
-- GPS/GLONASS/QZSS **(L2C)**
-- SBAS **(L5)**
-- GALILEO **(E5a)**
-- BeiDou **(B2)**
+    *as*
+    ```markdown
+    avg_cn0_l2
+    ```
+    
+=== "Sig3"
 
-*as*
->avg_cn0_l2
+    *as*
+    ```markdown
+    avg_cn0_l5
+    ```
 
-*avaliable at:*
 
-- GPS/QZSS **(L5)**
-- GALILEO **(E5b)**
-
-*as*
->avg_cn0_l5
 
 * * *
 
@@ -98,66 +146,261 @@ Carrier-to-Noise Ratio
 
 *avaliable at:*
 
-- GPS/GLONASS/SBAS/QZSS **(L1CA)**
-- GALILEO **(L1BC)**
-- BeiDou **(B1)**
+=== "Sig1"
 
-*as*
->s4
+    *as*
+    ```markdown
+    s4
+    ```
+
+=== "Sig2"
+
+    *as*
+    ```markdown
+    s4_l2
+    ```
+    
+=== "Sig3"
+
+    *as*
+    ```markdown
+    s4_l5
+    ```
+* * *
+
+## **Correction to total S4 on signal**
+*Thermal noise component only (dimensionless)*
 
 *avaliable at:*
 
-- GPS/GLONASS/QZSS **(L2C)**
-- SBAS **(L5)**
-- GALILEO **(E5a)**
-- BeiDou **(B2)**
+=== "Sig1"
 
-*as*
->s4_l2
+    *as*
+    ```markdown
+    s4_correction
+    ```
 
-*avaliable at:*
+=== "Sig2"
 
-- GPS/QZSS **(L5)**
-- GALILEO **(E5b)**
+    *as*
+    ```markdown
+    s4_correction_l2
+    ```
+    
+=== "Sig3"
 
-*as*
->s4_l5
+    *as*
+    ```markdown
+    s4_correction_l5
+    ```
 
 * * *
 
-## **Correction to total S4 on signal (thermal noise component only) (dimensionless)**
+## **Phi on signal**
+
+
+### Phi01
+
+- 1 second phase sigma (radians)
 
 *avaliable at:*
 
-- GPS/GLONASS/SBAS/QZSS **(L1CA)**
-- GALILEO **(L1BC)**
-- BeiDou **(B1)**
+=== "Sig1"
 
-*as*
->s4_correction
+    *as*
+    ```markdown
+    phi01|1
+
+    ```
+
+=== "Sig2"
+
+    *as*
+    ```markdown
+    phi01_l2
+
+    ```
+    
+=== "Sig3"
+
+    *as*
+    ```markdown
+    phi01_l5
+    ```
+
+
+### Phi03
+
+
+- 3 second phase sigma (radians)
 
 *avaliable at:*
 
-- GPS/GLONASS/QZSS **(L2C)**
-- SBAS **(L5)**
-- GALILEO **(E5a)**
-- BeiDou **(B2)**
+=== "Sig1"
 
-*as*
->s4_correction_l2
+    *as*
+    ```markdown
+    phi03|1
+
+    ```
+
+=== "Sig2"
+
+    *as*
+    ```markdown
+    phi03_l2
+
+    ```
+    
+=== "Sig3"
+
+    *as*
+    ```markdown
+    phi03_l5
+    ```
+
+### Phi10
+
+- 10 second phase sigma (radians)
 
 *avaliable at:*
 
-- GPS/QZSS **(L5)**
-- GALILEO **(E5b)**
+=== "Sig1"
 
-*as*
->s4_correction_l5
+    *as*
+    ```markdown
+    phi10|1
+
+    ```
+
+=== "Sig2"
+
+    *as*
+    ```markdown
+    phi10_l2
+
+    ```
+    
+=== "Sig3"
+
+    *as*
+    ```markdown
+    phi10_l5
+    ```
+
+### Phi30 
+
+- 30 second phase sigma (radians)
+
+*avaliable at:*
+
+=== "Sig1"
+
+    *as*
+    ```markdown
+    phi30|1
+
+    ```
+
+=== "Sig2"
+
+    *as*
+    ```markdown
+    phi30_l2
+
+    ```
+    
+=== "Sig3"
+
+    *as*
+    ```markdown
+    phi30_l5
+    ```
+
+
+### Phi60
+
+- 60 second phase sigma (radians)
+
+*avaliable at:*
+
+=== "Sig1"
+
+    *as*
+    ```markdown
+    phi60|1
+
+    ```
+
+=== "Sig2"
+
+    *as*
+    ```markdown
+    phi60_l2
+
+    ```
+    
+=== "Sig3"
+
+    *as*
+    ```markdown
+    phi60_l5
+    ```
 
 * * *
 
+## **Average of code/carrier divergence (meters)**
 
+*avaliable at:*
 
+=== "Sig1"
 
+    *as*
+    ```markdown
+    avgccd_l1
+    ```
+
+=== "Sig2"
+
+    *as*
+    ```markdown
+    avgccd_l2
+    ```
+    
+=== "Sig3"
+
+    *as*
+    ```markdown
+    avgccd_l5
+    ```
+
+* * *
+
+## **Standard deviation of code/carrier divergence (meters)**
+
+*avaliable at:*
+
+=== "Sig1"
+
+    *as*
+    ```markdown
+    sigmaccd_l1
+    ```
+
+=== "Sig2"
+
+    *as*
+    ```markdown
+    sigmaccd_l2
+    ```
+    
+=== "Sig3"
+
+    *as*
+    ```markdown
+    sigmaccd_l5
+    ```
+
+* * *
 
 
