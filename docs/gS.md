@@ -10,7 +10,7 @@
 
  **1.** To access the Tool a request to sign up is needed, identifying yourself and justifying the need for access.
 
-![SignUp](images/gs/localsignup.PNG)
+![SignUp](images/signOp.PNG)
 
 
 *Sign up option*
