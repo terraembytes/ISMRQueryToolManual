@@ -1,13 +1,13 @@
 # Specifications
-
+* * *
 ## How to use this specification
 
 * Parameters presented in plain text, the most of them, are mandatory. 
 * Parameters presented between brackets [ ] are optional and also independent from other parameters. 
 * Parameters presented in parenthesis are conditional (depend on the values of other parameters). Please, read the specification to check whether they might be either used or omitted.
 
-
-## ISMR data request
+* * *
+## **ISMR data request**
 Base URL: <http://is-cigala-calibra.fct.unesp.br/is/ismrtool/calc-var/service_loadISMR.php>
 
 Use this tool to download the data from the ISMR data table. 
@@ -33,8 +33,8 @@ b) Similar request based on station id and json output:
 [http://is-cigala-calibra.fct.unesp.br/is/ismrtool/calc-var/service_loadISMR.php?date_begin=2014-10-01 22:00:00&date_end=2014-10-01 22:05:00&station=5&mode=json](http://is-cigala-calibra.fct.unesp.br/is/ismrtool/calc-var/service_loadISMR.php?date_begin=2014-10-01 22:00:00&date_end=2014-10-01 22:05:00&station=5&mode=json)
 
 
-
-## High-rate (50 Hz) data
+* * *
+## **High-rate (50 Hz) data**
 Base URL: <http://is-cigala-calibra.fct.unesp.br/is/ismrtool/calc-var/service_loadHighRate.php> 
 
 Use this tool to download high-rate data (50 Hz) as text files.
@@ -50,9 +50,6 @@ data_type          | Integer value for the signal type according to Septentrio's
 sat                | SVID of the satellite according to Septentrio's convention (see Table 2).             | 2 <br> 25|
 mode               | Output mode. | csv |
 
-*Example of high-rate data (50 Hz)*
-
-![Data50Hz](images/api/data50.PNG)
 
 
 
@@ -126,9 +123,14 @@ d) Similar request for one-hour of L1CA high-rate data, satellite SVID 136 (SBAS
 
 [http://is-cigala-calibra.fct.unesp.br/is/ismrtool/calc-var/service_loadHighRate.php?timestamp=2014-10-01 22:00:00&stationName=PRU2&data_type=24&sat=136&mode=csv](http://is-cigala-calibra.fct.unesp.br/is/ismrtool/calc-var/service_loadHighRate.php?timestamp=2014-10-01 22:00:00&stationName=PRU2&data_type=24&sat=136&mode=csv)
 
+*Example of high-rate data (50 Hz)*
+
+![Data50Hz](images/api/data50.PNG)
 
 
-## Projected data (IPP points)
+* * *
+
+## **Projected data (IPP points)**
 
 Parameter          | Description   |  Example(s) |
 :-----------       |:------------- | :-----------
@@ -141,8 +143,6 @@ date_end           | End date/time of the dataset. Format **YYYY-MM-DD hh : mm :
 aggregation        | Choose none to consider "raw" project ipp data. | none  |
 ion                | Height (in units of **km**) of the ionospheric thin layer (usually between 350 and 450 km). | 350 <br> 400 |
 mode               | Output mode. | csv <br> json |
-
-
 
 ### Request Examples
 
