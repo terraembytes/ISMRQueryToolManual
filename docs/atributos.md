@@ -4,23 +4,23 @@
 
 ## Signal groups
 
-Sig1:
+1. Sig1:
 
-- **L1CA** for GPS/GLONASS/SBAS/QZSS 
-- **L1BC** for GALILEO 
-- **B1** for BeiDou 
+    - **L1CA** for GPS/GLONASS/SBAS/QZSS 
+    - **L1BC** for GALILEO 
+    - **B1** for BeiDou 
 
-Sig2:
+1. Sig2:
 
-- **L2C** for GPS/GLONASS/QZSS 
-- **L5** for SBAS 
-- **E5a** for*GALILEO 
-- **B2** for BeiDou 
+    - **L2C** for GPS/GLONASS/QZSS 
+    - **L5** for SBAS 
+    - **E5a** for*GALILEO 
+    - **B2** for BeiDou 
 
-Sig3:
+1. Sig3:
 
-- **L5** for GPS/QZSS 
-- **E5b** for GALILEO 
+    - **L5** for GPS/QZSS 
+    - **E5b** for GALILEO 
 
 
 * * *
@@ -138,7 +138,13 @@ Carrier-to-Noise Ratio
     avg_cn0_l5
     ```
 
+*Averaged C/N0 of the second frequency used for the TEC computation*
 
+*avaliable as:*
+
+```
+f2nd_tec_cn0
+```
 
 * * *
 
@@ -166,10 +172,7 @@ Carrier-to-Noise Ratio
     ```markdown
     s4_l5
     ```
-* * *
-
-## **Correction to total S4 on signal**
-*Thermal noise component only (dimensionless)*
+*Correction to total S4*
 
 *avaliable at:*
 
@@ -192,6 +195,72 @@ Carrier-to-Noise Ratio
     *as*
     ```markdown
     s4_correction_l5
+    ```
+
+*S4 corrected*
+
+
+  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true" scriptlevel="0">
+    <mrow data-mjx-texclass="ORD">
+      <mtable rowspacing=".5em" columnspacing="1em" displaystyle="true">
+        <mtr>
+          <mtd>
+            <mrow data-mjx-texclass="ORD">
+              <mo stretchy="false">&#x221A;</mo>
+            </mrow>
+            <mo stretchy="false">(</mo>
+            <mi>s</mi>
+            <msup>
+              <mn>4</mn>
+              <mn>2</mn>
+            </msup>
+            <mo>&#x2212;</mo>
+            <mi>s</mi>
+            <mn>4</mn>
+            <mn>_</mn>
+            <mi>c</mi>
+            <mi>o</mi>
+            <mi>r</mi>
+            <mi>r</mi>
+            <mi>e</mi>
+            <mi>c</mi>
+            <mi>t</mi>
+            <mi>i</mi>
+            <mi>o</mi>
+            <msup>
+              <mi>n</mi>
+              <mn>2</mn>
+            </msup>
+            <mo stretchy="false">)</mo>
+          </mtd>
+        </mtr>
+      </mtable>
+    </mrow>
+  </mstyle>
+</math>
+
+*avaliable at:*
+
+=== "Sig1"
+
+    *as*
+    ```markdown
+    s4_corrected
+    ```
+
+=== "Sig2"
+
+    *as*
+    ```markdown
+    s4_l2_corrected
+    ```
+    
+=== "Sig3"
+
+    *as*
+    ```markdown
+    s4_l5_corrected
     ```
 
 * * *
@@ -349,7 +418,9 @@ Carrier-to-Noise Ratio
 
 * * *
 
-## **Average of code/carrier divergence (meters)**
+## **Code/Carrier divergence (meters)**
+
+*Average*
 
 *avaliable at:*
 
@@ -376,7 +447,7 @@ Carrier-to-Noise Ratio
 
 * * *
 
-## **Standard deviation of code/carrier divergence (meters)**
+*Standard deviation*
 
 *avaliable at:*
 
@@ -403,4 +474,339 @@ Carrier-to-Noise Ratio
 
 * * *
 
+## **Total electron content**
+*Tec unit*
 
+
+*avaliable at:*
+
+=== "TOW"
+
+    *as*
+    ```markdown
+    tec
+    ```
+
+=== "TOW - 45 seconds"
+
+    *as*
+    ```markdown
+    tec_45
+    ```
+
+=== "TOW - 30 seconds"
+
+    *as*
+    ```markdown
+    tec_30
+    ```
+    
+=== "TOW - 15 seconds"
+
+    *as*
+    ```markdown
+    tec_15
+    ```
+
+
+*Difference of total electron content*
+
+
+*avaliable from:*
+
+=== "TOW - 60s to 45s"
+
+    *as*
+    ```markdown
+    dtec_6045
+    ```
+
+=== "TOW - 45s to 30s"
+
+    *as*
+    ```markdown
+    dtec_4530
+    ```
+
+=== "TOW - 30s to 15s"
+
+    *as*
+    ```markdown
+    dtec_3015
+    ```
+    
+=== "15s to TOW "
+
+    *as*
+    ```markdown
+    dtec_15tow
+    ```
+
+* * *
+
+## **Lock time**
+
+Indicates for how long each satellite’s signal has been continuously tracked
+on an antenna and is expressed in *seconds*.
+
+*avaliable at:*
+
+=== "Sig1"
+
+    *as*
+    ```markdown
+    locktime_l1
+    ```
+
+=== "Sig2"
+
+    *as*
+    ```markdown
+    locktime_l2
+    ```
+    
+=== "Sig3"
+
+    *as*
+    ```markdown
+    locktime_l5
+    ```
+
+*On the second frequency used for the TEC computation*
+
+*as*
+
+```
+f2nd_tec_locktime
+
+```
+
+* * *
+
+
+
+
+## **SI Index**
+ <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true" scriptlevel="0">
+    <mrow data-mjx-texclass="ORD">
+      <mtable rowspacing=".5em" columnspacing="1em" displaystyle="true">
+        <mtr>
+          <mtd>
+            <mstyle displaystyle="false" scriptlevel="0">
+              <mfrac>
+                <mrow>
+                  <mo stretchy="false">(</mo>
+                  <mn>10</mn>
+                  <mo>&#x2217;</mo>
+                  <mi>l</mi>
+                  <mi>o</mi>
+                  <mi>g</mi>
+                  <mn>10</mn>
+                  <mo stretchy="false">(</mo>
+                  <mi>P</mi>
+                  <mi>m</mi>
+                  <mi>a</mi>
+                  <mi>x</mi>
+                  <mo stretchy="false">)</mo>
+                  <mo>&#x2212;</mo>
+                  <mn>10</mn>
+                  <mo>&#x2217;</mo>
+                  <mi>l</mi>
+                  <mi>o</mi>
+                  <mi>g</mi>
+                  <mn>10</mn>
+                  <mo stretchy="false">(</mo>
+                  <mi>P</mi>
+                  <mi>m</mi>
+                  <mi>i</mi>
+                  <mi>n</mi>
+                  <mo stretchy="false">)</mo>
+                  <mo stretchy="false">)</mo>
+                </mrow>
+                <mrow>
+                  <mo stretchy="false">(</mo>
+                  <mn>10</mn>
+                  <mo>&#x2217;</mo>
+                  <mi>l</mi>
+                  <mi>o</mi>
+                  <mi>g</mi>
+                  <mn>10</mn>
+                  <mo stretchy="false">(</mo>
+                  <mi>P</mi>
+                  <mi>m</mi>
+                  <mi>a</mi>
+                  <mi>x</mi>
+                  <mo stretchy="false">)</mo>
+                  <mo>+</mo>
+                  <mn>10</mn>
+                  <mo>&#x2217;</mo>
+                  <mi>l</mi>
+                  <mi>o</mi>
+                  <mi>g</mi>
+                  <mn>10</mn>
+                  <mo stretchy="false">(</mo>
+                  <mi>P</mi>
+                  <mi>m</mi>
+                  <mi>i</mi>
+                  <mi>n</mi>
+                  <mo stretchy="false">)</mo>
+                  <mo stretchy="false">)</mo>
+                </mrow>
+              </mfrac>
+            </mstyle>
+          </mtd>
+        </mtr>
+      </mtable>
+    </mrow>
+  </mstyle>
+</math>
+
+*avaliable at:*
+
+=== "Sig1"
+
+    *as*
+    ```markdown
+    si_l1
+    ```
+
+=== "Sig2"
+
+    *as*
+    ```markdown
+    si_l2
+    ```
+    
+=== "Sig3"
+
+    *as*
+    ```markdown
+    si_l5
+    ```
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true" scriptlevel="0">
+    <mrow data-mjx-texclass="ORD">
+      <mtable rowspacing=".5em" columnspacing="1em" displaystyle="true">
+        <mtr>
+          <mtd>
+            <mstyle displaystyle="false" scriptlevel="0">
+              <mfrac>
+                <mrow>
+                  <mo stretchy="false">(</mo>
+                  <mn>10</mn>
+                  <mo>&#x2217;</mo>
+                  <mi>l</mi>
+                  <mi>o</mi>
+                  <mi>g</mi>
+                  <mn>10</mn>
+                  <mo stretchy="false">(</mo>
+                  <mi>P</mi>
+                  <mi>m</mi>
+                  <mi>a</mi>
+                  <mi>x</mi>
+                  <mo stretchy="false">)</mo>
+                  <mo>&#x2212;</mo>
+                  <mn>10</mn>
+                  <mo>&#x2217;</mo>
+                  <mi>l</mi>
+                  <mi>o</mi>
+                  <mi>g</mi>
+                  <mn>10</mn>
+                  <mo stretchy="false">(</mo>
+                  <mi>P</mi>
+                  <mi>m</mi>
+                  <mi>i</mi>
+                  <mi>n</mi>
+                  <mo stretchy="false">)</mo>
+                  <mo stretchy="false">)</mo>
+                </mrow>
+              </mfrac>
+            </mstyle>
+          </mtd>
+        </mtr>
+      </mtable>
+    </mrow>
+  </mstyle>
+</math>
+
+*numerator only (dB)*
+
+*avaliable at:*
+
+=== "Sig1"
+
+    *as*
+    ```markdown
+    numerator_si_l1
+    ```
+
+=== "Sig2"
+
+    *as*
+    ```markdown
+    numerator_si_l2
+    ```
+    
+=== "Sig3"
+
+    *as*
+    ```markdown
+    numerator_si_l5
+    ```
+* * *
+
+## **Phase spectral Slope**
+*0.1 to 25Hz range (dimensionless)*
+
+*avaliable at:*
+
+=== "Sig1"
+
+    *as*
+    ```markdown
+    p_l1
+    ```
+
+=== "Sig2"
+
+    *as*
+    ```markdown
+    p_l2
+    ```
+    
+=== "Sig3"
+
+    *as*
+    ```markdown
+    p_l5
+    ```
+
+* * *
+
+## **Phase power spectral density**
+*1 Hz (rad^2/Hz)*
+
+*avaliable at:*
+
+=== "Sig1"
+
+    *as*
+    ```markdown
+    t_l1
+    ```
+
+=== "Sig2"
+
+    *as*
+    ```markdown
+    t_l2
+    ```
+    
+=== "Sig3"
+
+    *as*
+    ```markdown
+    t_l5
+    ```

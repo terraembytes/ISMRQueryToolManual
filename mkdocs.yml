@@ -63,8 +63,8 @@ extra:
 
 
 markdown_extensions:
+  - md_in_html
   - abbr
-  - attr_list
   - pymdownx.tabbed:
       slugify: !!python/object/apply:pymdownx.slugs.slugify
         kwds:
