@@ -1,5 +1,10 @@
 # Specifications
 * * *
+
+The access authentication module was implemented in this latest version of the API. Now, to access the functionalities, a unique key is required, provided to each user of the tool. Your API key is provided when you access the tool and click on your user name (top right), as you can see in the following figure:
+
+![apikey](images/api/apikey.png)
+
 ## How to use this specification
 
 * Parameters presented in plain text, the most of them, are mandatory. 
@@ -8,7 +13,7 @@
 
 * * *
 ## **ISMR data request**
-Base URL: <http://is-cigala-calibra.fct.unesp.br/is/ismrtool/calc-var/service_loadISMR.php>
+Base URL: <https://ismrquerytool.fct.unesp.br/is/ismrtool/calc-var/service_loadISMR.php>
 
 Use this tool to download the data from the ISMR data table. 
 This service demands one HTTP request by **station**. It returns all ISMR data tracked at the given time window.
@@ -26,16 +31,16 @@ mode               | Output mode. | csv <br> json |
 
 a) Five minutes of data from PRU1 station:
 
-[http://is-cigala-calibra.fct.unesp.br/is/ismrtool/calc-var/service_loadISMR.php?date_begin=2014-10-01 22:00:00&date_end=2014-10-01 22:05:00&stationName=PRU1&mode=csv](http://is-cigala-calibra.fct.unesp.br/is/ismrtool/calc-var/service_loadISMR.php?date_begin=2014-10-01 22:00:00&date_end=2014-10-01 22:05:00&stationName=PRU1&mode=csv)
+[PRU1-5min](https://ismrquerytool.fct.unesp.br/is/ismrtool/calc-var/service_loadISMR.php?date_begin=2014-10-01%2022:00:00&date_end=2014-10-01%2022:05:00&stationName=PRU1&mode=csv)
 
 b) Similar request based on station id and json output:
 
-[http://is-cigala-calibra.fct.unesp.br/is/ismrtool/calc-var/service_loadISMR.php?date_begin=2014-10-01 22:00:00&date_end=2014-10-01 22:05:00&station=5&mode=json](http://is-cigala-calibra.fct.unesp.br/is/ismrtool/calc-var/service_loadISMR.php?date_begin=2014-10-01 22:00:00&date_end=2014-10-01 22:05:00&station=5&mode=json)
+[Id-Json output](https://ismrquerytool.fct.unesp.br/is/ismrtool/calc-var/service_loadISMR.php?date_begin=2014-10-01%2022:00:00&date_end=2014-10-01%2022:05:00&station=5&mode=json)
 
 
 * * *
 ## **High-rate (50 Hz) data**
-Base URL: <http://is-cigala-calibra.fct.unesp.br/is/ismrtool/calc-var/service_loadHighRate.php> 
+Base URL: <https://ismrquerytool.fct.unesp.br/is/ismrtool/calc-var/service_loadHighRate.php> 
 
 Use this tool to download high-rate data (50 Hz) as text files.
 Due to the large amount of data and huge processing/storage required to convert the binary files (.sbf) to text files at 50 Hz, this service demands a single HTTP call for each PRN and for each monitoring hourly file from a given station. 
@@ -87,7 +92,7 @@ Table 2 (obtained from PolaRx5s Reference Guide, v.5.1.2) describes the SVID (id
 
 a) Request for one-hour of L1/CA high-rate data, satellite GPS 2, station PRU1:
 
-[http://is-cigala-calibra.fct.unesp.br/is/ismrtool/calc-var/service_loadHighRate.php?timestamp=2014-10-01 22:00:00&stationName=PRU1&data_type=0&sat=2&mode=csv](http://is-cigala-calibra.fct.unesp.br/is/ismrtool/calc-var/service_loadHighRate.php?timestamp=2014-10-01 22:00:00&stationName=PRU1&data_type=0&sat=2&mode=csv)
+[L1/CA-GPS2](https://ismrquerytool.fct.unesp.br/is/ismrtool/calc-var/service_loadHighRate.php?timestamp=2014-10-01%2022:00:00&stationName=PRU1&data_type=0&sat=2&mode=csv)
 
 Output:
 
@@ -112,16 +117,16 @@ Output:
 
 b) Similar request for one-hour of L2C high-rate data, satellite GPS 6, station PRU1:
 
-[http://is-cigala-calibra.fct.unesp.br/is/ismrtool/calc-var/service_loadHighRate.php?timestamp=2014-10-01 22:00:00&stationName=PRU1&data_type=3&sat=6&mode=csv](http://is-cigala-calibra.fct.unesp.br/is/ismrtool/calc-var/service_loadHighRate.php?timestamp=2014-10-01 22:00:00&stationName=PRU1&data_type=3&sat=6&mode=csv)
+[L2C_SatGPS6](https://ismrquerytool.fct.unesp.br/is/ismrtool/calc-var/service_loadHighRate.php?timestamp=2014-10-01%2022:00:00&stationName=PRU1&data_type=3&sat=6&mode=csv)
 
 
 c) Similar request for one-hour of L5 high-rate data, satellite GPS 24, station PRU1:
 
-[http://is-cigala-calibra.fct.unesp.br/is/ismrtool/calc-var/service_loadHighRate.php?timestamp=2014-10-01 22:00:00&stationName=PRU1&data_type=4&sat=24&mode=csv](http://is-cigala-calibra.fct.unesp.br/is/ismrtool/calc-var/service_loadHighRate.php?timestamp=2014-10-01 22:00:00&stationName=PRU1&data_type=4&sat=24&mode=csv)
+[L5_SatGPS24](https://ismrquerytool.fct.unesp.br/is/ismrtool/calc-var/service_loadHighRate.php?timestamp=2014-10-01%2022:00:00&stationName=PRU1&data_type=3&sat=6&mode=csv)
 
 d) Similar request for one-hour of L1CA high-rate data, satellite SVID 136 (SBAS), station PRU2. Please, notice the signal type 24 on Table 1 for SBAS/L1CA signal:
 
-[http://is-cigala-calibra.fct.unesp.br/is/ismrtool/calc-var/service_loadHighRate.php?timestamp=2014-10-01 22:00:00&stationName=PRU2&data_type=24&sat=136&mode=csv](http://is-cigala-calibra.fct.unesp.br/is/ismrtool/calc-var/service_loadHighRate.php?timestamp=2014-10-01 22:00:00&stationName=PRU2&data_type=24&sat=136&mode=csv)
+[L1CA_SBAS136](https://ismrquerytool.fct.unesp.br/is/ismrtool/calc-var/service_loadHighRate.php?timestamp=2014-10-01%2022:00:00&stationName=PRU2&data_type=24&sat=136&mode=csv)
 
 *Example of high-rate data (50 Hz)*
 
@@ -148,7 +153,7 @@ mode               | Output mode. | csv <br> json |
 
 a) Ten minutes of GPS data for two stations (identified by ids 5,6) applying elevation mask filter:
 
-[http://is-cigala-calibra.fct.unesp.br/is/ismrtool/map/service_getMapIppPoints.php?date_begin=2014-10-01 22:00:00&date_end=2014-10-01 22:10:00&satellite=GPS&station=5,6&filters=elev>=20&field=s4&aggregation=none&ion=350&mode=csv](http://is-cigala-calibra.fct.unesp.br/is/ismrtool/map/service_getMapIppPoints.php?date_begin=2014-10-01 22:00:00&date_end=2014-10-01 22:10:00&satellite=GPS&station=5,6&filters=elev>=20&field=s4&aggregation=none&ion=350&mode=csv)
+[5-6_GPS](https://ismrquerytool.fct.unesp.br/is/ismrtool/map/service_getMapIppPoints.php?date_begin=2014-10-01%2022:00:00&date_end=2014-10-01%2022:10:00&satellite=GPS&station=5,6&filters=elev>=20&field=s4&aggregation=none&ion=350&mode=csv)
 
 *Output:*
     
@@ -163,5 +168,5 @@ a) Ten minutes of GPS data for two stations (identified by ids 5,6) applying ele
 
  b) Identifying stations by names, including GPS and GLONASS data and more filters:
  
- [http://is-cigala-calibra.fct.unesp.br/is/ismrtool/map/service_getMapIppPoints.php?date_begin=2014-10-01 22:00:00&date_end=2014-10-01 22:10:00&satellite=GPS,GLONASS&stationName=PRU1,PRU2,SJCU&filters=elev>=20;s4>0.1&field=s4&aggregation=none&ion=350&mode=csv](http://is-cigala-calibra.fct.unesp.br/is/ismrtool/map/service_getMapIppPoints.php?date_begin=2014-10-01 22:00:00&date_end=2014-10-01 22:10:00&satellite=GPS,GLONASS&stationName=PRU1,PRU2,SJCU&filters=elev>=20;s4>0.1&field=s4&aggregation=none&ion=350&mode=csv)
+ [GPS-GlONASS](https://ismrquerytool.fct.unesp.br/is/ismrtool/map/service_getMapIppPoints.php?date_begin=2014-10-01%2022:00:00&date_end=2014-10-01%2022:10:00&satellite=GPS,GLONASS&stationName=PRU1,PRU2,SJCU&filters=elev>=20;s4>0.1&field=s4&aggregation=none&ion=350&mode=csv)
 

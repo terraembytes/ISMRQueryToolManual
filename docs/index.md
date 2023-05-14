@@ -51,7 +51,9 @@ After logging in as an authorized researcher, collaborator or staff member, the 
 
 **Plotations**
 
-- [PHPlot (v5.4.0)](http://phplot.org){:target="_blank"}
+
+
+- Linguagem R
 
 
 **Map**
