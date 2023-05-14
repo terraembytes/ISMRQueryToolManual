@@ -42,4 +42,4 @@ Define how the points will be displayed on the map
 
 Aggregation consists in a way to summarize a comprehensive dataset using specific methods.
 
-Examples:
+*Examples:*
