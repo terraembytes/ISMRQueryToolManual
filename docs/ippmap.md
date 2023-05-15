@@ -125,4 +125,14 @@ Defines the Tickness of the line that represents the Magnetic Equator in the map
 
 ![MagEq](images/ipp/magEquatorT.PNG)
 
+* * *
+
+## **Label**
+
+Name that will be displayed on the top of the map
+
+![Label](images/ipp/label.PNG)
+
+<!--## **Ionosphere Height (Km)**-->
+
 
