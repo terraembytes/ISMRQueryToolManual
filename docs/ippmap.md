@@ -42,4 +42,87 @@ Define how the points will be displayed on the map
 
 Aggregation consists in a way to summarize a comprehensive dataset using specific methods.
 
+![Aggregations](images/ipp/aggregations.PNG)
+
 *Examples:*
+
+=== "Without Aggregation"
+
+    *Inputs:*
+
+
+    ![Inputs](images/ipp/inputsWout.PNG)
+
+
+    *Output:*
+
+    ![Output](images/ipp/outputWout.PNG)
+
+
+=== "With Aggregation by Standard Deviation"
+
+    *Inputs:*
+
+
+    ![Inputs](images/ipp/inputsW.PNG)
+
+
+    *Output:*
+
+    ![Output](images/ipp/outputW.PNG)
+
+* * *
+
+## **Grid Resolution / Threshold**
+
+Projection IPP Resolution according to the aggregation selected.
+
+* * *
+
+## **Point Size / PRN Label Size**
+
+- Point Size:
+
+    Size of the displayed points 
+
+- PRN Label Size:
+
+    Display size of the Pseudorandom number of the satellite from which the data was collected
+
+*Example with PRN Label Size as 1*
+
+![PRN](images/ipp/prn1.PNG) 
+
+* * *
+
+## **Legend Range**
+
+Defines the range of values collected for the selected field that will be indicated by the legend
+
+*Example:*
+
+*Input*
+
+![legendRange](images/ipp/legendRange.PNG)
+
+*Output*
+
+![Legend](images/ipp/legend.PNG)
+
+* * *
+
+## **Map Size**
+
+Map size in the output (Width x Height)
+
+![Size](images/ipp/size.PNG)
+
+* * *
+
+## **Magnetic Equator Tickness**
+
+Defines the Tickness of the line that represents the Magnetic Equator in the map
+
+![MagEq](images/ipp/magEquatorT.PNG)
+
+
