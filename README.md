@@ -54,3 +54,10 @@ até avançados, e oferece instruções passo a passo para usufruir de tudo que 
    > O console irá fornecer um link de deploy local
 
 2. Após verificar e realizar todas as alterações, basta executar o push do repositório atualizado no github e o deploy no github pages será executado automaticamente pelo arquivo **./github/workflows/ci.yml**.
+
+   ```
+   git add .
+   git remote -v
+   git commit -m $'*mensagem do commit'
+   git push origin main
+   ```
