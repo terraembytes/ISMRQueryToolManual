@@ -1,9 +1,10 @@
-# Specifications
+# 12. Specifications
 * * *
 
 The access authentication module was implemented in this latest version of the API. Now, to access the functionalities, a unique key is required, provided to each user of the tool. Your API key is provided when you access the tool and click on your user name (top right), as you can see in the following figure:
 
 ![apikey](images/api/apikey.png)
+*Figure 12.0.1 - API Key Example*
 
 ## How to use this specification
 
@@ -12,7 +13,7 @@ The access authentication module was implemented in this latest version of the A
 * Parameters presented in parenthesis are conditional (depend on the values of other parameters). Please, read the specification to check whether they might be either used or omitted.
 
 * * *
-## **ISMR data request**
+## **12.1 ISMR data request**
 Base URL: <https://ismrquerytool.fct.unesp.br/is/ismrtool/calc-var/service_loadISMR.php>
 
 Use this tool to download the data from the ISMR data table. 
@@ -31,15 +32,19 @@ mode               | Output mode. | csv <br> json |
 
 a) Five minutes of data from PRU1 station:
 
+*Example 12.1.1*
+
 [PRU1-5min](https://ismrquerytool.fct.unesp.br/is/ismrtool/calc-var/service_loadISMR.php?date_begin=2014-10-01%2022:00:00&date_end=2014-10-01%2022:05:00&stationName=PRU1&mode=csv)
 
 b) Similar request based on station id and json output:
+
+*Example 12.1.2*
 
 [Id-Json output](https://ismrquerytool.fct.unesp.br/is/ismrtool/calc-var/service_loadISMR.php?date_begin=2014-10-01%2022:00:00&date_end=2014-10-01%2022:05:00&station=5&mode=json)
 
 
 * * *
-## **High-rate (50 Hz) data**
+## **12.2 High-rate (50 Hz) data**
 Base URL: <https://ismrquerytool.fct.unesp.br/is/ismrtool/calc-var/service_loadHighRate.php> 
 
 Use this tool to download high-rate data (50 Hz) as text files.
@@ -92,6 +97,8 @@ Table 2 (obtained from PolaRx5s Reference Guide, v.5.1.2) describes the SVID (id
 
 a) Request for one-hour of L1/CA high-rate data, satellite GPS 2, station PRU1:
 
+*Example 12.2.1*
+
 [L1/CA-GPS2](https://ismrquerytool.fct.unesp.br/is/ismrtool/calc-var/service_loadHighRate.php?timestamp=2014-10-01%2022:00:00&stationName=PRU1&data_type=0&sat=2&mode=csv)
 
 Output:
@@ -117,25 +124,32 @@ Output:
 
 b) Similar request for one-hour of L2C high-rate data, satellite GPS 6, station PRU1:
 
+*Example 12.2.2*
+
 [L2C_SatGPS6](https://ismrquerytool.fct.unesp.br/is/ismrtool/calc-var/service_loadHighRate.php?timestamp=2014-10-01%2022:00:00&stationName=PRU1&data_type=3&sat=6&mode=csv)
 
 
 c) Similar request for one-hour of L5 high-rate data, satellite GPS 24, station PRU1:
 
+*Example 12.2.3*
+
 [L5_SatGPS24](https://ismrquerytool.fct.unesp.br/is/ismrtool/calc-var/service_loadHighRate.php?timestamp=2014-10-01%2022:00:00&stationName=PRU1&data_type=3&sat=6&mode=csv)
 
 d) Similar request for one-hour of L1CA high-rate data, satellite SVID 136 (SBAS), station PRU2. Please, notice the signal type 24 on Table 1 for SBAS/L1CA signal:
 
+*Example 12.2.4*
+
 [L1CA_SBAS136](https://ismrquerytool.fct.unesp.br/is/ismrtool/calc-var/service_loadHighRate.php?timestamp=2014-10-01%2022:00:00&stationName=PRU2&data_type=24&sat=136&mode=csv)
 
-*Example of high-rate data (50 Hz)*
 
 ![Data50Hz](images/api/data50.PNG)
+
+*Figure 12.2.1 - Example of high-rate data (50 Hz)*
 
 
 * * *
 
-## **Projected data (IPP points)**
+## **12.3 Projected data (IPP points)**
 
 Parameter          | Description   |  Example(s) |
 :-----------       |:------------- | :-----------
@@ -153,6 +167,8 @@ mode               | Output mode. | csv <br> json |
 
 a) Ten minutes of GPS data for two stations (identified by ids 5,6) applying elevation mask filter:
 
+*Example 12.3.1*
+
 [5-6_GPS](https://ismrquerytool.fct.unesp.br/is/ismrtool/map/service_getMapIppPoints.php?date_begin=2014-10-01%2022:00:00&date_end=2014-10-01%2022:10:00&satellite=GPS&station=5,6&filters=elev>=20&field=s4&aggregation=none&ion=350&mode=csv)
 
 *Output:*
@@ -167,6 +183,8 @@ a) Ten minutes of GPS data for two stations (identified by ids 5,6) applying ele
 
 
  b) Identifying stations by names, including GPS and GLONASS data and more filters:
+
+ *Example 12.3.2*
  
  [GPS-GlONASS](https://ismrquerytool.fct.unesp.br/is/ismrtool/map/service_getMapIppPoints.php?date_begin=2014-10-01%2022:00:00&date_end=2014-10-01%2022:10:00&satellite=GPS,GLONASS&stationName=PRU1,PRU2,SJCU&filters=elev>=20;s4>0.1&field=s4&aggregation=none&ion=350&mode=csv)
 

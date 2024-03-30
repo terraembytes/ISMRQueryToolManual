@@ -1,10 +1,10 @@
 
 
-# Getting Started
+# 1. Getting Started
 
 * * *
 
-##**Accessing the Tool**
+##**1.1 Accessing the Tool**
 
 &nbsp;&nbsp;&nbsp;&nbsp; **Steps:**
 
@@ -13,7 +13,7 @@
 ![SignUp](images/signOp.png)
 
 
-*Sign up option*
+*Figure 1.1.1 - Sign up option*
 
  **2.** After the registration is validated, simply log in and the access to the functions will be released.
 
@@ -21,17 +21,17 @@
 ![Login](images/login.PNG)
   
 
-*Login Screen*
+*Figure 1.1.2 - Login Screen*
  
 
 ![Functions](images/functions.png)
 
 
-*Functions Avaliable*
+*Figure 1.1.3 - Functions Avaliable*
 
 * * *
 
-##**Using the Tool**
+##**1.2 Using the Tool**
 
 Database have billions of observations, so the user must to filter subsets of data when querying due to operational aspects. The receivers provide more than 60 parameters. It is possible to combine any of them while queryng through the filters usage.
 
@@ -52,12 +52,11 @@ date_end | End date/time of the dataset. Format **YYYY-MM-DD hh : mm :ss** | 201
 (station) | Single numeric station **id** to be retrieved. Use only if *stationName* is omitted. | 5 
 
 
-###*In the tool*
 ![Data request](images/datarequest.PNG)
-
+*Figure 1.2.1 - In the tool*
 * * *
 
-## **Some initial parameters**
+## **1.3 Some initial parameters**
 
 *Some of the functions will have as start Filters:*
 
@@ -77,6 +76,8 @@ date_end | End date/time of the dataset. Format **YYYY-MM-DD hh : mm :ss** | 201
 
 ###*How it looks*
 ![Data request](images/parameters.PNG)
+
+*Figure 1.3.1 - Inputs*
 
 ###*Functions that use these inputs:*
 1. Plot

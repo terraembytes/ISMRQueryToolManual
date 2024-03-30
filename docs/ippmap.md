@@ -1,4 +1,4 @@
-# Ionospheric Pierce Points (IPP) Map
+# 5. Ionospheric Pierce Points (IPP) Map
 
 * * *
 
@@ -12,74 +12,76 @@ projecting the IPP path over the selected time interval using aggregation method
 
 ![Parameters](images/ipp/filters.PNG)
 
+*Figure 5.0.1 - Inputs*
+
 
 * * *
 
-## **Field**
+## **5.1 Field**
 
 Here the user selects the field that will be considered when generating the map along with the custom filters chosen earlier.
 
 ![Fields](images/ipp/fields.PNG)
 
+*Figure 5.1.1 - Fields*
+
 * * *
 
-## **Style**
+## **5.2 Style**
 
 Define how the points will be displayed on the map
 
-*Circle*
 
 ![Circle](images/ipp/circle.PNG)
 
-*Square*
+*Figure 5.2.1 - Circle*
 
 ![Square](images/ipp/square.PNG)
 
+*Figure 5.2.2 - Square*
 
 * * *
 
-## **Aggregation**
+## **5.3 Aggregation**
 
 Aggregation consists in a way to summarize a comprehensive dataset using specific methods.
 
 ![Aggregations](images/ipp/aggregations.PNG)
 
-*Examples:*
+*Figure 5.3.1 - Aggregations*
+
+**Examples:**
 
 === "Without Aggregation"
 
-    *Inputs:*
+    ![Inputs](images/ipp/inputsWout.PNG) 
 
-
-    ![Inputs](images/ipp/inputsWout.PNG)
-
-
-    *Output:*
+    *Figure 5.3.2 - Inputs*
 
     ![Output](images/ipp/outputWout.PNG)
+
+    *Figure 5.3.3 - Output*
 
 
 === "With Aggregation by Standard Deviation"
 
-    *Inputs:*
-
-
     ![Inputs](images/ipp/inputsW.PNG)
 
-
-    *Output:*
+    *Figure 5.3.4 - Inputs*
 
     ![Output](images/ipp/outputW.PNG)
 
+    *Figure 5.3.5 - Output*
+
 * * *
 
-## **Grid Resolution / Threshold**
+## **5.4 Grid Resolution / Threshold**
 
 Projection IPP Resolution according to the aggregation selected.
 
 * * *
 
-## **Point Size / PRN Label Size**
+## **5.5 Point Size / PRN Label Size**
 
 - Point Size:
 
@@ -89,49 +91,55 @@ Projection IPP Resolution according to the aggregation selected.
 
     Display size of the Pseudorandom number of the satellite from which the data was collected
 
-*Example with PRN Label Size as 1*
-
 ![PRN](images/ipp/prn1.PNG) 
+
+*Figure 5.5.1 - Example with PRN Label Size as 1*
 
 * * *
 
-## **Legend Range**
+## **5.6 Legend Range**
 
 Defines the range of values collected for the selected field that will be indicated by the legend
 
-*Example:*
-
-*Input*
+**Example:**
 
 ![legendRange](images/ipp/legendRange.PNG)
 
-*Output*
+*Figure 5.6.1 - Inputs*
 
 ![Legend](images/ipp/legend.PNG)
 
+*Figure 5.6.2 - Output*
+
 * * *
 
-## **Map Size**
+## **5.7 Map Size**
 
 Map size in the output (Width x Height)
 
 ![Size](images/ipp/size.PNG)
 
+*Figure 5.7.1 - Input*
+
 * * *
 
-## **Magnetic Equator Tickness**
+## **5.8 Magnetic Equator Tickness**
 
 Defines the Tickness of the line that represents the Magnetic Equator in the map
 
 ![MagEq](images/ipp/magEquatorT.PNG)
 
+*Figure 5.8.1 - Input*
+
 * * *
 
-## **Label**
+## **5.9 Label**
 
 Name that will be displayed on the top of the map
 
 ![Label](images/ipp/label.PNG)
+
+*Figure 5.9.1 - Input*
 
 <!--## **Ionosphere Height (Km)**-->
 

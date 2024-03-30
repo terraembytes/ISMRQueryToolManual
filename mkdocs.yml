@@ -12,6 +12,7 @@ nav:
   - Calendars: cView.md
   - Correlation Analysis: cA.md
   - Sky Plot: skyplot.md
+  - Scintilation Map: scintilation.md
   - API: api.md
 theme:
   custom_dir: overrides

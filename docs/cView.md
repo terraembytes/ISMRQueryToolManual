@@ -1,4 +1,4 @@
-# Calendars
+# 8. Calendars
 
 * * *
 
@@ -16,31 +16,27 @@ This function allows the visualization of the time series of scintillation monit
 
 * * *
 
-## **Calendar View**
+## **8.1 Calendar View**
 
 The user must select the year to be visualized and the thresholds for displaying the information 
 
-*Inputs:*
-
 ![viewInput](images/Calendar/viewInputs.PNG)
-
-*Output:*
+*Figure 8.1.1 - Inputs*
 
 ![viewOutput](images/Calendar/viewOutput.PNG)
+*Figure 8.1.2 - Output*
 
 
 * * *
 
-## **Time Interval View**
+## **8.2 Time Interval View**
 
 In addition to the year to be displayed and the thresholds for displaying the information, the user also indicates the desired time interval.
 
  - *The standard deviation thresholds are dynamically set*
 
-*Inputs:*
-
 ![viewInput](images/Calendar/timeInputs.PNG)
-
-*Output:*
+*Figure 8.2.1 - Inputs*
 
 ![viewOutput](images/Calendar/timeOutput.PNG)
+*Figure 8.2.2 - Output*
