@@ -44,16 +44,16 @@ até avançados, e oferece instruções passo a passo para usufruir de tudo que 
    pip install mkdocs-material
    ```
 
-### Realizando as alterações no projeto
+### Realizando as alterações no projeto (VS Code)
 
-1. Após abrir o repositório no VS Code e realizar as alterações, um preview do deploy do projeto pode ser visto executando o seguinte comando no terminal do VS Code:
+1. Depois de realizar as alterações, um preview do deploy do projeto pode ser visto executando o seguinte comando no terminal do VS Code:
 
    ```
    mkdocs serve
    ```
    > O console irá fornecer um link de deploy local
 
-2. Após verificar e realizar todas as alterações, basta executar o push do repositório atualizado no github e o deploy no github pages será executado automaticamente pelo arquivo **./github/workflows/ci.yml**.
+2. Após verificar e realizar todas as alterações, basta executar o push do repositório atualizado no github e o deploy no github pages será executado automaticamente pelo arquivo **./github/workflows/ci.yml** no link: [Manual](https://terraembytes.github.io/ISMRQueryToolManual/).
 
    ```
    git add .
