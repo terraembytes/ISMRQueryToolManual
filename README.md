@@ -18,7 +18,7 @@ até avançados, e oferece instruções passo a passo para usufruir de tudo que 
 * [Python 3.x](https://www.python.org)
 * [GitHub CLI](https://git-scm.com/downloads)
 
-### Preparando o ambiente (No GitHub CLI)
+### Preparando o ambiente (GitHub CLI)
 
 1. Execute o git clone da branch **main**
 
