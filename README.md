@@ -10,5 +10,5 @@ Mencione as ferramentas que você usou para criar seu projeto
 * [Markdown](https://www.markdownguide.org) - Linguagem de marcação utilizada 
 * [Mkdocs](https://www.mkdocs.org) - Gerador de site à partir de arquivos MarkDown
 
-# Para desenvolvedores
-## Abaixo serão disponibilizadas instruções para que você obtenha uma cópia do projeto em operação na sua máquina local para fins de desenvolvimento e teste.
+# Para colaboradores
+- Abaixo serão disponibilizadas instruções para que os colaboradores do projeto possam clonar e fazer um deploy atualizado do Manual
