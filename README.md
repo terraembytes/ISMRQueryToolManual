@@ -6,10 +6,11 @@ até avançados, e oferece instruções passo a passo para usufruir de tudo que 
 
 ## 🛠️ Construído com
 
-Mencione as ferramentas que você usou para criar seu projeto
-
 * [Markdown](https://www.markdownguide.org) - Linguagem de marcação utilizada 
 * [Mkdocs](https://www.mkdocs.org) - Gerador de site à partir de arquivos MarkDown
 
 # Para colaboradores
+
 > Abaixo serão disponibilizadas instruções para que os colaboradores do projeto possam clonar e fazer um deploy atualizado do Manual
+
+## 
