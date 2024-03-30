@@ -13,4 +13,44 @@ até avançados, e oferece instruções passo a passo para usufruir de tudo que 
 
 > Abaixo serão disponibilizadas instruções para que os colaboradores do projeto possam clonar e fazer um deploy atualizado do Manual
 
-## 
+### Pré-Requisitos (Este guia utiliza como editor o VS Code)
+
+* [Python 3.x](https://www.python.org)
+* [GitHub CLI](https://git-scm.com/downloads)
+
+### Preparando o ambiente (No GitHub CLI)
+
+1. Execute o git clone da branch **main**
+
+   ```
+   git clone https://github.com/terraembytes/ISMRQueryToolManual.git
+   ```
+   
+2. Agora, para criar o ambiente virtual python, execute dentro do repositório que foi clonado:
+
+   ```
+   python -m venv venv
+   ```
+
+3. Ativando o ambiente virtual para a instalação do mkdocs:
+
+   ```
+   source venv/Scripts/activate
+   ```
+
+4. Instalando a biblioteca MkDocs no ambiente virtual:
+
+   ```
+   pip install mkdocs-material
+   ```
+
+### Realizando as alterações no projeto
+
+1. Após abrir o repositório no VS Code e realizar as alterações, um preview do deploy do projeto pode ser visto executando o seguinte comando no terminal do VS Code:
+
+   ```
+   mkdocs serve
+   ```
+   > O console irá fornecer um link de deploy local
+
+2. Após verificar e realizar todas as alterações, basta executar o push do repositório atualizado no github e o deploy no github pages será executado automaticamente pelo arquivo **./github/workflows/ci.yml**.
