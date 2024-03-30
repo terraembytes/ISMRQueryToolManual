@@ -1,0 +1,1193 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../scintilation/">
+      
+      
+      
+      <link rel="icon" href="../images/icon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.15">
+    
+    
+  <title>ISMR Query Tool Manual</title>
+
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e359304.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="light-blue" data-md-color-accent="lime">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#12-specifications" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="ISMR Query Tool Manual" class="md-header__button md-logo" aria-label="ISMR Query Tool Manual" data-md-component="logo">
+      
+  <img src="../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ISMR Query Tool Manual
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              API
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="light-blue" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="yellow"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../gS/" class="md-tabs__link">
+        
+  
+    
+  
+  Getting Started
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../atributos/" class="md-tabs__link">
+        
+  
+    
+  
+  Attributes
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../plot/" class="md-tabs__link">
+        
+  
+    
+  
+  Plot
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../grid/" class="md-tabs__link">
+        
+  
+    
+  
+  Grid
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ippmap/" class="md-tabs__link">
+        
+  
+    
+  
+  IPP Map
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../hC/" class="md-tabs__link">
+        
+  
+    
+  
+  Horizon Charts
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../sax/" class="md-tabs__link">
+        
+  
+    
+  
+  SAX
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../cView/" class="md-tabs__link">
+        
+  
+    
+  
+  Calendars
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../cA/" class="md-tabs__link">
+        
+  
+    
+  
+  Correlation Analysis
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../skyplot/" class="md-tabs__link">
+        
+  
+    
+  
+  Sky Plot
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../scintilation/" class="md-tabs__link">
+        
+  
+    
+  
+  Scintilation Map
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  API
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ISMR Query Tool Manual" class="md-nav__button md-logo" aria-label="ISMR Query Tool Manual" data-md-component="logo">
+      
+  <img src="../images/logo.png" alt="logo">
+
+    </a>
+    ISMR Query Tool Manual
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../atributos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Attributes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Plot
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../grid/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Grid
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ippmap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IPP Map
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Horizon Charts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sax/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SAX
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cView/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Calendars
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Correlation Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../skyplot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sky Plot
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scintilation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scintilation Map
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    API
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    API
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use-this-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to use this specification
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#121-ismr-data-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      12.1 ISMR data request
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12.1 ISMR data request">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Request examples
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#122-high-rate-50-hz-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      12.2 High-rate (50 Hz) data
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12.2 High-rate (50 Hz) data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-examples_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Request examples
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#123-projected-data-ipp-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      12.3 Projected data (IPP points)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12.3 Projected data (IPP points)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-examples_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Request Examples
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="12-specifications">12. Specifications</h1>
+<hr />
+<p>The access authentication module was implemented in this latest version of the API. Now, to access the functionalities, a unique key is required, provided to each user of the tool. Your API key is provided when you access the tool and click on your user name (top right), as you can see in the following figure:</p>
+<p><img alt="apikey" src="../images/api/apikey.png" />
+<em>Figure 12.0.1 - API Key Example</em></p>
+<h2 id="how-to-use-this-specification">How to use this specification</h2>
+<ul>
+<li>Parameters presented in plain text, the most of them, are mandatory. </li>
+<li>Parameters presented between brackets [ ] are optional and also independent from other parameters. </li>
+<li>Parameters presented in parenthesis are conditional (depend on the values of other parameters). Please, read the specification to check whether they might be either used or omitted.</li>
+</ul>
+<hr />
+<h2 id="121-ismr-data-request"><strong>12.1 ISMR data request</strong></h2>
+<p>Base URL: <a href="https://ismrquerytool.fct.unesp.br/is/ismrtool/calc-var/service_loadISMR.php">https://ismrquerytool.fct.unesp.br/is/ismrtool/calc-var/service_loadISMR.php</a></p>
+<p>Use this tool to download the data from the ISMR data table. 
+This service demands one HTTP request by <strong>station</strong>. It returns all ISMR data tracked at the given time window.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Example(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">date_begin</td>
+<td style="text-align: left;">Start date/time of the dataset. Format <strong>YYYY-MM-DD hh : mm : ss</strong></td>
+<td style="text-align: left;">2014-10-01 22:00:00</td>
+</tr>
+<tr>
+<td style="text-align: left;">date_end</td>
+<td style="text-align: left;">End date/time of the dataset. Format <strong>YYYY-MM-DD hh : mm : ss</strong></td>
+<td style="text-align: left;">2014-10-01 22:05:00</td>
+</tr>
+<tr>
+<td style="text-align: left;">(station)</td>
+<td style="text-align: left;">Single numeric <strong>station id</strong> to be retrieved. Use only if <em>stationName</em> is omitted.</td>
+<td style="text-align: left;">5 <br> 8</td>
+</tr>
+<tr>
+<td style="text-align: left;">(stationName)</td>
+<td style="text-align: left;">String <strong>station name (XXXX)</strong> to be retrieved. Use only if <em>station</em> is omitted.</td>
+<td style="text-align: left;">PRU1 <br> SJCU</td>
+</tr>
+<tr>
+<td style="text-align: left;">mode</td>
+<td style="text-align: left;">Output mode.</td>
+<td style="text-align: left;">csv <br> json</td>
+</tr>
+</tbody>
+</table>
+<h3 id="request-examples">Request examples</h3>
+<p>a) Five minutes of data from PRU1 station:</p>
+<p><em>Example 12.1.1</em></p>
+<p><a href="https://ismrquerytool.fct.unesp.br/is/ismrtool/calc-var/service_loadISMR.php?date_begin=2014-10-01%2022:00:00&amp;date_end=2014-10-01%2022:05:00&amp;stationName=PRU1&amp;mode=csv">PRU1-5min</a></p>
+<p>b) Similar request based on station id and json output:</p>
+<p><em>Example 12.1.2</em></p>
+<p><a href="https://ismrquerytool.fct.unesp.br/is/ismrtool/calc-var/service_loadISMR.php?date_begin=2014-10-01%2022:00:00&amp;date_end=2014-10-01%2022:05:00&amp;station=5&amp;mode=json">Id-Json output</a></p>
+<hr />
+<h2 id="122-high-rate-50-hz-data"><strong>12.2 High-rate (50 Hz) data</strong></h2>
+<p>Base URL: <a href="https://ismrquerytool.fct.unesp.br/is/ismrtool/calc-var/service_loadHighRate.php">https://ismrquerytool.fct.unesp.br/is/ismrtool/calc-var/service_loadHighRate.php</a> </p>
+<p>Use this tool to download high-rate data (50 Hz) as text files.
+Due to the large amount of data and huge processing/storage required to convert the binary files (.sbf) to text files at 50 Hz, this service demands a single HTTP call for each PRN and for each monitoring hourly file from a given station. </p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Example(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">timestamp</td>
+<td style="text-align: left;">A single timestamp (date/time) inside the date-time range of the file. Format <strong>YYYY-MM-DD hh : mm : ss</strong></td>
+<td style="text-align: left;">2014-10-01 22:01:00</td>
+</tr>
+<tr>
+<td style="text-align: left;">(station)</td>
+<td style="text-align: left;">Single numeric <strong>station id</strong> to be retrieved. Use only if <em>stationName</em> is omitted.</td>
+<td style="text-align: left;">5 <br> 8</td>
+</tr>
+<tr>
+<td style="text-align: left;">(stationName)</td>
+<td style="text-align: left;">String <strong>station name (XXXX)</strong> to be retrieved. Use only if <em>station</em> is omitted.</td>
+<td style="text-align: left;">PRU1 <br> SJCU</td>
+</tr>
+<tr>
+<td style="text-align: left;">data_type</td>
+<td style="text-align: left;">Integer value for the signal type according to Septentrio's convention (see Table 1).</td>
+<td style="text-align: left;">0 <br> 3</td>
+</tr>
+<tr>
+<td style="text-align: left;">sat</td>
+<td style="text-align: left;">SVID of the satellite according to Septentrio's convention (see Table 2).</td>
+<td style="text-align: left;">2 <br> 25</td>
+</tr>
+<tr>
+<td style="text-align: left;">mode</td>
+<td style="text-align: left;">Output mode.</td>
+<td style="text-align: left;">csv</td>
+</tr>
+</tbody>
+</table>
+<p>The most of the stations works with hourly files. Few stations works with 15-minutes files, for such stations this webservice is not supported yet. Users can look for the ISMR data in advance to check the satellites present in the dataset at a given time range.</p>
+<p>The <strong>timestamp</strong> parameter will identify the corresponding raw file to make the 50 Hz conversion. Please, see the remarks below regarding the time ranges for the hourly bases files:</p>
+<ul>
+<li>Timestamp 2014-10-01 22:00:00 will load data from 22:00:00.00 to 22:59:59.98;</li>
+<li>Timestamp 2014-10-01 22:01:00 will load data from 22:00:00.00 to 22:59:59.98;</li>
+<li>Timestamp 2014-10-01 22:05:00 will load data from 22:00:00.00 to 22:59:59.98.</li>
+</ul>
+<p>Table 1 (obtained from PolaRx5s Reference Guide, v.5.1.2) describes the code number for the available signal types. For example, the default configuration in the PolaRxS/PolaRx5s allows to retrieve 50 Hz data for the following signal types for a GPS satellite: 0 (L1/CA); 3 (L2C); 4 (L5).</p>
+<object data="../images/ws/signal-type.pdf" type="application/pdf" width="800px" height="700px">
+    <embed src="../images/ws/signal-type.pdf">
+        <p>This browser does not support PDFs. Please download the PDF to view it: 
+        <a href="../images/ws/signal-type.pdf">Download PDF</a>.</p>
+    </embed>
+</object>
+<legend>Table 1 - Signal types for the "data_type" parameter.</legend>
+
+<p>Table 2 (obtained from PolaRx5s Reference Guide, v.5.1.2) describes the SVID (identificator of satellites in PolaRxS/PolaRx5s) receivers. For example, for the GPS satellites, the SVID=PRN.</p>
+<object data="../images/ws/svid.pdf" type="application/pdf" width="800px" height="600px">
+    <embed src="../images/ws/svid.pdf">
+        <p>This browser does not support PDFs. Please download the PDF to view it: 
+        <a href="../images/ws/svid.pdf">Download PDF</a>.</p>
+    </embed>
+</object>
+<legend>Table 2 - SVID name convention for the "sat" parameter.</legend>
+
+<h3 id="request-examples_1">Request examples</h3>
+<p>a) Request for one-hour of L1/CA high-rate data, satellite GPS 2, station PRU1:</p>
+<p><em>Example 12.2.1</em></p>
+<p><a href="https://ismrquerytool.fct.unesp.br/is/ismrtool/calc-var/service_loadHighRate.php?timestamp=2014-10-01%2022:00:00&amp;stationName=PRU1&amp;data_type=0&amp;sat=2&amp;mode=csv">L1/CA-GPS2</a></p>
+<p>Output:</p>
+<div class="highlight"><pre><span></span><code>tow,svid,flag_obs_type,phase,Icorr,Qcorr
+338400.00,2,0,115418414.046,510,9
+338400.02,2,0,115418354.284,-506,1
+338400.04,2,0,115418294.521,521,24
+338400.06,2,0,115418234.758,-486,5
+338400.08,2,0,115418174.997,-517,7
+338400.10,2,0,115418115.236,481,-16
+338400.12,2,0,115418055.478,-509,13
+....
+....
+341999.90,2,0,107330519.800,-691,-3
+341999.92,2,0,107330494.308,719,5
+341999.94,2,0,107330468.816,-694,-5
+341999.96,2,0,107330443.324,-692,3
+341999.98,2,0,107330417.833,-709,6
+</code></pre></div>
+<p><em>Remark: one hour corresponds to 180000 lines in the 50 Hz output.</em></p>
+<p>b) Similar request for one-hour of L2C high-rate data, satellite GPS 6, station PRU1:</p>
+<p><em>Example 12.2.2</em></p>
+<p><a href="https://ismrquerytool.fct.unesp.br/is/ismrtool/calc-var/service_loadHighRate.php?timestamp=2014-10-01%2022:00:00&amp;stationName=PRU1&amp;data_type=3&amp;sat=6&amp;mode=csv">L2C_SatGPS6</a></p>
+<p>c) Similar request for one-hour of L5 high-rate data, satellite GPS 24, station PRU1:</p>
+<p><em>Example 12.2.3</em></p>
+<p><a href="https://ismrquerytool.fct.unesp.br/is/ismrtool/calc-var/service_loadHighRate.php?timestamp=2014-10-01%2022:00:00&amp;stationName=PRU1&amp;data_type=3&amp;sat=6&amp;mode=csv">L5_SatGPS24</a></p>
+<p>d) Similar request for one-hour of L1CA high-rate data, satellite SVID 136 (SBAS), station PRU2. Please, notice the signal type 24 on Table 1 for SBAS/L1CA signal:</p>
+<p><em>Example 12.2.4</em></p>
+<p><a href="https://ismrquerytool.fct.unesp.br/is/ismrtool/calc-var/service_loadHighRate.php?timestamp=2014-10-01%2022:00:00&amp;stationName=PRU2&amp;data_type=24&amp;sat=136&amp;mode=csv">L1CA_SBAS136</a></p>
+<p><img alt="Data50Hz" src="../images/api/data50.PNG" /></p>
+<p><em>Figure 12.2.1 - Example of high-rate data (50 Hz)</em></p>
+<hr />
+<h2 id="123-projected-data-ipp-points"><strong>12.3 Projected data (IPP points)</strong></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Example(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">date_begin</td>
+<td style="text-align: left;">Start date/time of the dataset. Format <strong>YYYY-MM-DD hh : mm : ss</strong></td>
+<td style="text-align: left;">2014-10-01 22:00:00</td>
+</tr>
+<tr>
+<td style="text-align: left;">date_end</td>
+<td style="text-align: left;">End date/time of the dataset. Format <strong>YYYY-MM-DD hh : mm : ss</strong></td>
+<td style="text-align: left;">2014-10-01 22:05:00</td>
+</tr>
+<tr>
+<td style="text-align: left;">[satellite]</td>
+<td style="text-align: left;">Comma separated list of GNSS systems (case insensitive) to be included. If omitted, defaults to all satellites tracked by receivers.</td>
+<td style="text-align: left;">gps <br> GPS,GLONASS <br> GPS,GLONASS,GALILEO,SBAS,BEIDOU,QZSS</td>
+</tr>
+<tr>
+<td style="text-align: left;">(station)</td>
+<td style="text-align: left;">Comma separated list of <strong>station ids</strong> to be included. Use only if <em>stationName</em> is omitted.</td>
+<td style="text-align: left;">5 <br> 5,6,8</td>
+</tr>
+<tr>
+<td style="text-align: left;">(stationName)</td>
+<td style="text-align: left;">Comma separated list of <strong>station names</strong> to be included. Use only if <em>station</em> is omitted.</td>
+<td style="text-align: left;">PRU1 <br> PRU1,PRU2,SJCU</td>
+</tr>
+<tr>
+<td style="text-align: left;">[filters]</td>
+<td style="text-align: left;">Filters (SQL style) to be applied. Semicolon <strong>(;)</strong> separated list.</td>
+<td style="text-align: left;">elev&gt;=20;<br> elev&gt;10; s4&gt;0.1;</td>
+</tr>
+<tr>
+<td style="text-align: left;">aggregation</td>
+<td style="text-align: left;">Choose none to consider "raw" project ipp data.</td>
+<td style="text-align: left;">none</td>
+</tr>
+<tr>
+<td style="text-align: left;">ion</td>
+<td style="text-align: left;">Height (in units of <strong>km</strong>) of the ionospheric thin layer (usually between 350 and 450 km).</td>
+<td style="text-align: left;">350 <br> 400</td>
+</tr>
+<tr>
+<td style="text-align: left;">mode</td>
+<td style="text-align: left;">Output mode.</td>
+<td style="text-align: left;">csv <br> json</td>
+</tr>
+</tbody>
+</table>
+<h3 id="request-examples_2">Request Examples</h3>
+<p>a) Ten minutes of GPS data for two stations (identified by ids 5,6) applying elevation mask filter:</p>
+<p><em>Example 12.3.1</em></p>
+<p><a href="https://ismrquerytool.fct.unesp.br/is/ismrtool/map/service_getMapIppPoints.php?date_begin=2014-10-01%2022:00:00&amp;date_end=2014-10-01%2022:10:00&amp;satellite=GPS&amp;station=5,6&amp;filters=elev&gt;=20&amp;field=s4&amp;aggregation=none&amp;ion=350&amp;mode=csv">5-6_GPS</a></p>
+<p><em>Output:</em></p>
+<div class="highlight"><pre><span></span><code>svid, lat, long, value, time_utc, station_id
+G24, -24.551081188188, -52.956004713185, 0.044, 2014-10-01 22:00:00, 5
+G15, -20.485846927774, -54.380930873625, 0.092, 2014-10-01 22:00:00, 5
+G2, -18.6995221417, -49.653109044635, 0.08, 2014-10-01 22:00:00, 5
+...
+</code></pre></div>
+<p>Column <strong>svid</strong> identifies the PRN and/or GNSS system. Numeric values in the column <strong>value</strong> corresponds to the chosen field in the HTTP request (in this example, it corresponds to the s4 index).</p>
+<p>b) Identifying stations by names, including GPS and GLONASS data and more filters:</p>
+<p><em>Example 12.3.2</em></p>
+<p><a href="https://ismrquerytool.fct.unesp.br/is/ismrtool/map/service_getMapIppPoints.php?date_begin=2014-10-01%2022:00:00&amp;date_end=2014-10-01%2022:10:00&amp;satellite=GPS,GLONASS&amp;stationName=PRU1,PRU2,SJCU&amp;filters=elev&gt;=20;s4&gt;0.1&amp;field=s4&amp;aggregation=none&amp;ion=350&amp;mode=csv">GPS-GlONASS</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../scintilation/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Scintilation Map">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Scintilation Map
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2023 <a>Bruno Cesar Vani</a>
+
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="mailto:brunovani22@gmail.com" target="_blank" rel="noopener" title="Fazer uma sugestão/report" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480v-83.6c0-4 1.5-7.8 4.2-10.7l167.6-182.9c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8l-88.3-44.2C7.1 311.3.3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.instagram.com/gege.unesp/" target="_blank" rel="noopener" title="www.instagram.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.tracking", "navigation.instant", "navigation.top", "navigation.footer", "navigation.prune", "navigation.path", "toc.integrate", "toc.follow", "search.suggest", "search.highlight", "content.code.annotation", "content.code.copy", "content.tooltips"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.bd41221c.min.js"></script>
+      
+    
+  </body>
+</html>

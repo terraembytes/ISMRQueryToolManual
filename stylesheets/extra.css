@@ -1,0 +1,22 @@
+body
+{
+    display: flex;
+}
+
+
+#container{
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.869);
+    padding: 0.5rem;
+    border: 0.5rem;
+    border-radius: 7px;
+}
+
+.imagem
+{
+    margin: 30px;
+    display: inline-block;
+}
+
+
+
